@@ -2,7 +2,8 @@ package com.hotelManagementSystem;
 
 import java.util.Date;
 
-public class Booking {
+public class Booking 
+{
     private int bookingID;
     private Guest guest;
     private Room room;
@@ -10,7 +11,8 @@ public class Booking {
     private Date checkOutDate;
     private double totalAmount;
 
-    public Booking(int bookingID, Guest guest, Room room, Date checkInDate, Date checkOutDate) {
+    public Booking(int bookingID, Guest guest, Room room, Date checkInDate, Date checkOutDate) 
+    {
         this.bookingID = bookingID;
         this.guest = guest;
         this.room = room;
@@ -19,47 +21,57 @@ public class Booking {
         this.totalAmount = calculateTotalAmount();
     }
 
-    public int getBookingID() {
+    public int getBookingID() 
+    {
         return bookingID;
     }
 
-    public Guest getGuest() {
+    public Guest getGuest() 
+    {
         return guest;
     }
 
-    public Room getRoom() {
+    public Room getRoom() 
+    {
         return room;
     }
 
-    public Date getCheckInDate() {
+    public Date getCheckInDate() 
+    {
         return checkInDate;
     }
 
-    public Date getCheckOutDate() {
+    public Date getCheckOutDate() 
+    {
         return checkOutDate;
     }
 
-    public double getTotalAmount() {
+    public double getTotalAmount() 
+    {
         return totalAmount;
     }
 
-    public void updateBooking(Date checkInDate, Date checkOutDate) {
+    public void updateBooking(Date checkInDate, Date checkOutDate) 
+    {
         this.checkInDate = checkInDate;
         this.checkOutDate = checkOutDate;
         this.totalAmount = calculateTotalAmount();
     }
 
-    public void cancelBooking() {
+    public void cancelBooking() 
+    {
         room.releaseRoom();
     }
 
-    private double calculateTotalAmount() {
+    private double calculateTotalAmount() 
+    {
         long diff = checkOutDate.getTime() - checkInDate.getTime();
         int days = (int) (diff / (1000 * 60 * 60 * 24));
         return days * room.getPrice();
     }
 
-    public String getBookingDetails() {
+    public String getBookingDetails() 
+    {
         return "Booking ID: " + bookingID + ", Guest: " + guest.getName() + ", Room: " + room.getRoomNumber() + ", Check-in: " + checkInDate + ", Check-out: " + checkOutDate + ", Total Amount: " + totalAmount;
     }
 }
