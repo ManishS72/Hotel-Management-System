@@ -1,13 +1,15 @@
 package com.hotelManagementSystem;
 
-public class Guest {
+public class Guest 
+{
     private int guestID;
     private String name;
     private String address;
     private String phoneNumber;
     private String email;
 
-    public Guest(int guestID, String name, String address, String phoneNumber, String email) {
+    public Guest(int guestID, String name, String address, String phoneNumber, String email) 
+    {
         this.guestID = guestID;
         this.name = name;
         this.address = address;
@@ -15,34 +17,41 @@ public class Guest {
         this.email = email;
     }
 
-    public int getGuestID() {
+    public int getGuestID() 
+    {
         return guestID;
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
     }
 
-    public String getAddress() {
+    public String getAddress() 
+    {
         return address;
     }
 
-    public String getPhoneNumber() {
+    public String getPhoneNumber() 
+    {
         return phoneNumber;
     }
 
-    public String getEmail() {
+    public String getEmail() 
+    {
         return email;
     }
 
-    public void updateGuestDetails(String name, String address, String phoneNumber, String email) {
+    public void updateGuestDetails(String name, String address, String phoneNumber, String email) 
+    {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public String getGuestDetails() {
+    public String getGuestDetails() 
+    {
         return "Guest ID: " + guestID + ", Name: " + name + ", Address: " + address + ", Phone: " + phoneNumber + ", Email: " + email;
     }
 }
