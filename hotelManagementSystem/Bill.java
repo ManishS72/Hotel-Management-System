@@ -1,39 +1,47 @@
 package com.hotelManagementSystem;
 
-public class Bill {
+public class Bill 
+{
     private int billID;
     private Booking booking;
     private double amount;
     private boolean paymentStatus;
 
-    public Bill(int billID, Booking booking) {
+    public Bill(int billID, Booking booking) 
+    {
         this.billID = billID;
         this.booking = booking;
         this.amount = booking.getTotalAmount();
-        this.paymentStatus = false; // Payment is pending by default
+        this.paymentStatus = false; 
     }
 
-    public int getBillID() {
+    public int getBillID() 
+    {
         return billID;
     }
 
-    public Booking getBooking() {
+    public Booking getBooking() 
+    {
         return booking;
     }
 
-    public double getAmount() {
+    public double getAmount() 
+    {
         return amount;
     }
 
-    public boolean isPaymentStatus() {
+    public boolean isPaymentStatus() 
+    {
         return paymentStatus;
     }
 
-    public void processPayment() {
+    public void processPayment() 
+    {
         this.paymentStatus = true;
     }
 
-    public String getBillDetails() {
+    public String getBillDetails() 
+    {
         return "Bill ID: " + billID + ", Booking ID: " + booking.getBookingID() + ", Amount: " + amount + ", Payment Status: " + (paymentStatus ? "Paid" : "Pending");
     }
 }
