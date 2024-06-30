@@ -59,7 +59,8 @@ public class Room
   }
 
 @Override
-public String toString() {
+public String toString() 
+{
     return "Room Number=" + roomNumber + ", roomType=" + roomType + ", isAvailable=" + isAvailable + ", price=" + price;
 }
 
