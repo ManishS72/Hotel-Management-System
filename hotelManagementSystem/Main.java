@@ -4,8 +4,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Main {
-    public static void main(String[] args) {
+public class MainClass
+{
+    public static void main(String[] args) 
+    {
         HotelManagementSystem hms = new HotelManagementSystem();
 
         
@@ -19,26 +21,31 @@ public class Main {
         hms.addGuest("Bhaskar", "HSR Layout Bangalore", "969398047", "bhaskar123@gmail.com");
 
         
-        try {
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date checkIn = sdf.parse("2024-07-01");
-            Date checkOut = sdf.parse("2024-07-05");
+        try 
+            {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Date checkIn = sdf.parse("2024-07-05");
+                Date checkOut = sdf.parse("2024-07-09");
 
-            hms.createBooking(1, 1, checkIn, checkOut);
-            hms.createBooking(2, 2, checkIn, checkOut);
-
-            
-            hms.generateBill(1);
-            hms.generateBill(2);
+                hms.createBooking(1, 1, checkIn, checkOut);
+                hms.createBooking(2, 2, checkIn, checkOut);
+                hms.createbooking(3, 3, checkIn, checkeOut);
 
             
-            hms.displayRooms();
-            hms.displayGuests();
-            hms.displayBookings();
-            hms.displayBills();
+                hms.generateBill(1);
+                hms.generateBill(2);
+                hms.generateBill(3);
 
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+            
+                hms.displayRooms();
+                hms.displayGuests();
+                hms.displayBookings();
+                hms.displayBills();
+
+        } 
+        catch (ParseException e) 
+            {
+                e.printStackTrace();
+            }
     }
 }
